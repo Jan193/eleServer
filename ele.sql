@@ -120,3 +120,24 @@ INSERT INTO goodsList VALUES
 -- 给表添加字段
 ALTER TABLE goodsType ADD count TINYINT DEFAULT 0;
 ALTER TABLE goodslIST ADD count TINYINT DEFAULT 0;
+
+
+CREATE TABLE user (
+    uid TINYINT PRIMARY KEY AUTO_INCREMENT,
+    userName CHAR(16),
+    userPwd CHAR(16)
+)
+
+-- 订单表
+CREATE TABLE orders (
+    iid INT PRIMARY KEY AUTO_INCREMENT,
+    userId TINYINT COMMENT '用户的id',
+    merchantId INT COMMENT '商家id',
+    createTime DATETIME COMMENT '下单时间',
+    payStatus TINYINT COMMENT '支付状态',
+    mname CHAR(16) COMMENT '商家名称',
+    mlogo VARCHAR(128) COMMENT '商家logo',
+    goodsName VARCHAR(128) COMMENT '下单的上面名称: 可乐,雪碧',
+    goodsCount VARCHAR(128) COMMENT '商品数量: 2,1,3',
+    payAmount FLOAT(5, 2) COMMENT '支付金额'
+)

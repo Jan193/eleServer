@@ -16,4 +16,7 @@ module.exports = app => {
   router.get('/merchant/detail', controller.merchantDetail.echo)
   router.get('/merchant/goods/type', controller.goodsType.echo)
   router.get('/merchant/goods/list', controller.goodsList.echo)
+  router.post('/user/login', controller.login.echo)
+  router.post('/order/pay', controller.order.echo)
+  router.get('/order/list', controller.orderList.echo)
 };

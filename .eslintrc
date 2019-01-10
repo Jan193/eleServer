@@ -3,6 +3,8 @@
   "rules": {
     "linebreak-style":"off",
     "semi":"off",
-    "quotes":"off"
+    "quotes":"off",
+    "no-debugger":"off",
+    "arrow-parens":"off"
   }
 }
