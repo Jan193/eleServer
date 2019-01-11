@@ -19,4 +19,6 @@ module.exports = app => {
   router.post('/user/login', controller.login.echo)
   router.post('/order/pay', controller.order.echo)
   router.get('/order/list', controller.orderList.echo)
+
+  router.post('/admin/login', controller.admin.login.echo)
 };

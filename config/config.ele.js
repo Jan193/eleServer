@@ -2,7 +2,7 @@
 
 exports.mysql = {
   client: {
-    host: 'localhost',
+    host: '106.12.121.211',
     port: "3306",
     user: "root",
     password: "",

@@ -61,10 +61,24 @@ CREATE TABLE merchant (
 ALTER TABLE merchant MODIFY COLUMN distributionPrice FLOAT(2, 1) # 修改表的字段类型
 
 INSERT INTO merchant VALUES 
-(NULL, '月光堡盒●炸鸡●汉堡●小吃', 'https://fuss10.elemecdn.com/c/44/8ad0ba99c703d633fab266cd3573bpng.png', 
-'https://fuss10.elemecdn.com/c/44/8ad0ba99c703d633fab266cd3573bpng.png', false, 4.3, 2238, 20, 1.5, '2.7km', '42分钟', '汉堡', 30, 24),
-(NULL, '真功夫(东华店)', 'https://fuss10.elemecdn.com/a/b3/259e1b77a1d4896f20f584087a9c4jpeg.jpeg', 
-'https://fuss10.elemecdn.com/b/84/9e556f75f62903413dbba87bc68e9png.png', true, 4.6, 816, 20, 6.0, '1.2km', '35分钟', '简餐', 40, 20);
+(NULL, '老巷口', 'https://fuss10.elemecdn.com/6/74/048104fbc86c0fce5a80c5d8f77e5jpeg.jpeg', '', false, 4.7, 562, 15, 1, '2.76km', '40分钟', '川湘菜', 32, 5),
+(NULL, '星颂西餐(龙华店)', 'https://fuss10.elemecdn.com/c/35/6e0429e3c5fe24d16744fcd138c8cjpeg.jpeg', '', false, 5, 32, 20, 5, '1.97km', '40分钟', '简餐', 37, 7),
+(NULL, '尊宝比萨(南国丽园店)', 'https://fuss10.elemecdn.com/e/7d/9854d2f95050092a008b4e3ee29e6png.png', '', true, 4.8, 306, 30, 3, '1.41km', '44分钟', '披萨意面', 20, 10),
+(NULL, '湘乡人家木桶饭', 'https://fuss10.elemecdn.com/5/04/f24bf7a43ffaf44e9b7372b127a33jpeg.jpeg', '', true, 4.8, 306, 30, 3, '1.41km', '44分钟', '披萨意面', 20, 10),
+(NULL, '赣湘木桶饭（华富市场店）', 'https://fuss10.elemecdn.com/b/67/b4ee44a67338199590d4f3af29fe9jpeg.jpeg', '', true, 4.1, 306, 30, 3, '1.41km', '44分钟', '简餐', 20, 10),
+(NULL, '肯德基宅急送（龙华山姆店）', 'https://fuss10.elemecdn.com/e/f5/0a17a7cd8d400ff7e6a5006b344e0jpeg.jpeg', '', true, 4.8, 306, 30, 3, '1.41km', '44分钟', '汉堡', 20, 10),
+(NULL, '河南烩面馆(龙华店)', 'https://fuss10.elemecdn.com/2/84/348f45cf983a0d6307096453e278cjpeg.jpeg', '', true, 4.8, 306, 30, 3, '1.41km', '44分钟', '米粉面馆', 20, 10),
+(NULL, '湘乡人家木桶饭（龙华店）', 'https://fuss10.elemecdn.com/e/9e/0dcfc77c81c2df2bee953d0b78859jpeg.jpeg', '', true, 4.8, 306, 30, 3, '1.41km', '44分钟', '川湘菜', 20, 10),
+(NULL, '林小鹿麻辣烫好汤好食材', 'https://fuss10.elemecdn.com/c/81/e4e20eaa548f83ea6052f63e7ea88png.png', '', true, 4.8, 306, 30, 3, '1.41km', '44分钟', '麻辣烫', 20, 10),
+(NULL, '餐餐乐（龙华店）', 'https://fuss10.elemecdn.com/9/15/23a4d535197fbfdaf4d7cda222f25png.png', '', true, 4.8, 306, 30, 3, '1.41km', '44分钟', '简餐', 20, 10),
+(NULL, '老地方小碗菜', 'https://fuss10.elemecdn.com/b/c2/e446d1d5f8e77c3fe245ccad79e52png.png', '', true, 4.8, 306, 30, 3, '1.41km', '44分钟', '简餐', 20, 10),
+(NULL, '辣么乡精致湖南菜', 'https://fuss10.elemecdn.com/2/18/fa9284da86a546c3005948c83aca9png.png', '', true, 4.8, 306, 30, 3, '1.41km', '44分钟', '简餐', 20, 10);
+
+
+-- (NULL, '月光堡盒●炸鸡●汉堡●小吃', 'https://fuss10.elemecdn.com/c/44/8ad0ba99c703d633fab266cd3573bpng.png', 
+-- 'https://fuss10.elemecdn.com/c/44/8ad0ba99c703d633fab266cd3573bpng.png', false, 4.3, 2238, 20, 1.5, '2.7km', '42分钟', '汉堡', 30, 24),
+-- (NULL, '真功夫(东华店)', 'https://fuss10.elemecdn.com/a/b3/259e1b77a1d4896f20f584087a9c4jpeg.jpeg', 
+-- 'https://fuss10.elemecdn.com/b/84/9e556f75f62903413dbba87bc68e9png.png', true, 4.6, 816, 20, 6.0, '1.2km', '35分钟', '简餐', 40, 20);
 
 
 -- 评价表
@@ -141,3 +155,15 @@ CREATE TABLE orders (
     goodsCount VARCHAR(128) COMMENT '商品数量: 2,1,3',
     payAmount FLOAT(5, 2) COMMENT '支付金额'
 )
+
+
+-- admin table
+
+CREATE TABLE admin_user(
+    uid TINYINT PRIMARY KEY AUTO_INCREMENT,
+    userName CHAR(16),
+    userPwd VARCHAR(32)
+)
+
+INSERT INTO admin_user VALUES
+(1, 'jane', '123');
