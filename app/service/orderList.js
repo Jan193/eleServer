@@ -2,7 +2,7 @@
  * @Description: 获取订单列表
  * @Author: your name
  * @Date: 2019-01-09 16:05:54
- * @LastEditTime: 2019-01-10 15:43:21
+ * @LastEditTime: 2019-01-11 14:23:32
  * @LastEditors: Please set LastEditors
  */
 'use strict';
@@ -20,7 +20,6 @@ class OrderListService extends Service {
       list.map(async (item) => {
         const mid = item.merchantId
         const res = await app.mysql.get('merchant', { MID: mid })
-        console.log('item:', item);
         const goodsName = item.goodsName.split(',')
         const goodsCount = item.goodsCount.split(',')
         const buyGoodslist = []
@@ -71,7 +70,6 @@ class OrderListService extends Service {
         list: JSON.stringify(buyGoodslist),
       })
     } */
-    console.log('goodsList:', goodsList);
     return goodsList
   }
 }

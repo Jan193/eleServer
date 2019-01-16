@@ -162,8 +162,21 @@ CREATE TABLE orders (
 CREATE TABLE admin_user(
     uid TINYINT PRIMARY KEY AUTO_INCREMENT,
     userName CHAR(16),
-    userPwd VARCHAR(32)
+    userPwd VARCHAR(32),
+    role TINYINT DEFAULT 2 COMMENT '0:超级管理员, 1:管理员, 2:普通用户'
 )
 
 INSERT INTO admin_user VALUES
 (1, 'jane', '123');
+
+
+CREATE TABLE admin_menu(
+    iid TINYINT PRIMARY KEY AUTO_INCREMENT,
+    iname CHAR(16),
+    icon VARCHAR(128)
+)
+
+INSERT INTO admin_menu VALUES
+(NULL, '商家', '');
+
+ALTER TABLE admin_menu ADD isChildren BOOLEAN DEFAULT false;

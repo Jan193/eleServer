@@ -21,4 +21,11 @@ module.exports = app => {
   router.get('/order/list', controller.orderList.echo)
 
   router.post('/admin/login', controller.admin.login.echo)
+  router.get('/admin/user/list', controller.admin.user.list)
+  router.post('/admin/user/add', controller.admin.user.add)
+  router.post('/admin/user/delete', controller.admin.user.delete)
+
+  // app.resources('menu', '/admin/menu', controller.admin.menu)
+  router.get('/admin/menu/list', controller.admin.menu.list)
+  router.post('/admin/menu/add', controller.admin.menu.add)
 };

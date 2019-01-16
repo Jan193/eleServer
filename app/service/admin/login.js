@@ -6,21 +6,26 @@ class LoginService extends Service {
   async echo(params) {
     let result = {}
     if (params) {
-      const sqlResult = this.app.mysql.select('admin_user', { userName: params.userName })
-      const userInfo = sqlResult[0]
-      if (userInfo && params.userPwd === userInfo.userPwd) {
-        result = {
-          code: 0,
-          msg: '登录成功',
-          data: {
-            userName: params.userName,
-          },
+      const sqlResult = await this.app.mysql.get('admin_user', { userName: params.userName })
+      if (sqlResult) {
+        if (params.userPwd === sqlResult.userPwd) {
+          result = {
+            code: 0,
+            msg: '登录成功',
+            data: {
+              userName: params.userName,
+            },
+          }
+        } else {
+          result = {
+            code: 1,
+            msg: '密码不正确',
+          }
         }
       } else {
         result = {
-          code: 1,
-          msg: '用户不存在或密码不正确',
-          data: {},
+          code: 2,
+          msg: '用户不存在',
         }
       }
     } else {
