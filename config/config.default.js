@@ -1,6 +1,8 @@
 'use strict'
 
 const mysql = require('./config.ele').mysql
+const graphql = require('./config.graphql').graphql
+const middleware = require('./config.graphql').middleware
 
 module.exports = appInfo => {
   const config = exports = {};
@@ -9,7 +11,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1546849380343_4659';
 
   // add your config here
-  config.middleware = [];
+  config.middleware = [ 'graphql' ];
 
   config.mysql = mysql
 
@@ -28,6 +30,9 @@ module.exports = appInfo => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
     origin: '*',
   };
+
+  config.graphql = graphql
+  // config.middleware = middleware
 
   return config;
 };

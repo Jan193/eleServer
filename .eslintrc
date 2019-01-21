@@ -5,6 +5,8 @@
     "semi":"off",
     "quotes":"off",
     "no-debugger":"off",
-    "arrow-parens":"off"
+    "arrow-parens":"off",
+    "comma-dangle":"off",
+    "eol-last":"off"
   }
 }

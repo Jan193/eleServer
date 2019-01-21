@@ -42,8 +42,38 @@ class MenuService extends Service {
     }
     return result
   }
-  async delete() {}
-  async update() {}
+  async delete(params) {
+    const sql = this.app.mysql.delete('admin_menu', { iid: params.id })
+    let result = {}
+    if (sql) {
+      result = {
+        code: 0,
+        msg: '删除成功'
+      }
+    } else {
+      result = {
+        code: 1,
+        msg: '删除失败'
+      }
+    }
+    return result;
+  }
+  async update(params) {
+    const sql = this.app.mysql.update('admin_menu', { iid: params.id })
+    let result = {}
+    if (sql) {
+      result = {
+        code: 0,
+        msg: '修改成功'
+      }
+    } else {
+      result = {
+        code: 1,
+        msg: '修改失败'
+      }
+    }
+    return result;
+  }
 }
 
 module.exports = MenuService;

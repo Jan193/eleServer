@@ -10,18 +10,20 @@ class MenuController extends Controller {
   }
   async add() {
     const ctx = this.ctx
-    const params = ctx.query
-    const data = await ctx.service.admin.menu.add(params)
+    const query = ctx.query
+    const data = await ctx.service.admin.menu.add(query)
     ctx.body = data
   }
   async delete() {
     const ctx = this.ctx
-    const data = await ctx.service.admin.menu.delete()
+    const query = ctx.query
+    const data = await ctx.service.admin.menu.delete(query)
     ctx.body = data
   }
   async update() {
     const ctx = this.ctx
-    const data = await ctx.service.admin.menu.update()
+    const query = ctx.query
+    const data = await ctx.service.admin.menu.update(query)
     ctx.body = data
   }
 }
